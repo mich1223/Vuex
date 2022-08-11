@@ -20,6 +20,13 @@ export default createStore({
     },
     accionDisminuir({commit}, numero){ /*Accion que activa la mutación disminuir, recibiendo un parámetro desde el componente BtnDisminuir*/
       commit('disminuir', numero)
+    },
+    accionBoton({commit}, objeto){/*Accion que cambia el nombre según su estado true/false y recibe 2 parámetros*/
+      if (objeto.estado){ /* Si el estado en homeview es  */
+        commit('incrementar', objeto.numero)/*positivo*/ 
+      }else{
+        commit('disminuir', objeto.numero)
+      }
     }
   },
   modules: {
